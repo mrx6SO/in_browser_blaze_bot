@@ -31,10 +31,10 @@ var initBet = () => {
                 }
 				    //botao_comeco.dispatchEvent("change")
 				
-                    botao_comeco.addEventListener("change", function() {
-}
+                   // botao_comeco.addEventListener("change", function() {
+/*s}
 
-/*if (currentBetAmount > baseBetAmount) { 
+if (currentBetAmount > baseBetAmount) { 
 
         	
         }*/
@@ -45,7 +45,7 @@ let checkResults = () => {
     if (resultado_giro.includes('Blaze Girou')) {
         resultados.push({ resultado: resultado_giro });
         localStorage.setItem("Resultados", JSON.stringify(resultados));
-
+    }
         // Obter a cor escolhida pelo usuário
         let cor_escolhida = document.querySelector("div#roulette-controller.controller > div.body > div.inputs-wrapper > div.input.side > div.input-wrapper.select").querySelector("div.selected");
 
@@ -89,13 +89,12 @@ let checkResults = () => {
                 wins++;
                 consecutiveLosses = 0;
                 console.debug(`Ganhou! Vitórias consecutivas: ${wins}`);
+            }
             } else {
                 losses++;
                 consecutiveLosses++;
-                console.debug(`Perdeu! Derrotas consecutivas: ${consecutiveLosses}`);
+                   }       console.debug(`Perdeu! Derrotas consecutivas: ${consecutiveLosses}`);
             }
-        }
-    }
     // Ajustar a quantidade da aposta
     if (consecutiveLosses >= 2) {
         console.info(`Perdeu ${consecutiveLosses} vezes consecutivas. Parando as apostas.`);
@@ -107,4 +106,6 @@ let checkResults = () => {
         currentBetAmount = baseBetAmount * Math.pow(2, losses);
         console.info(`Ajustando a quantidade da aposta para ${currentBetAmount}.`);
     }
+
+    return null;
 }
