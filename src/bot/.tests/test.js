@@ -21,19 +21,17 @@ let timer_finish = timer.childNodes[0].className === 'time-left' ? true ? false 
 //botao_comeco.addEventListener("change", initBet);
 
 var initBet = () => {
-
-    let verifica_resultados = JSON.parse(localStorage.getItem(resultados))
-    let wins_verificados = verifica_resultados.map(winning => wins)
-    let losses_verificados = verifica_resultados.map(losing => losses)
-
-    //let div_aposta = document.querySelector(".")
-    if (wins_verificados >= 5 || losses_verificados <= 1) {
-
-        keepPlaying = true;
-
-
-    }
-
+		
+		let verifica_resultados = JSON.parse(localStorage.getItem(resultados))
+		let wins_verificados = verifica_resultados.map(winning => wins)
+		let losses_verificados = verifica_resultados.map(losing => losses)
+		let botao_comeco = document.querySelector(".place-bet > button:nth-child(1)");
+			if (wins_verificados >= 5 || losses_verificados <= 1) { 
+					keepPlaying = true; 
+                }
+				    //botao_comeco.dispatchEvent("change")
+				
+                    botao_comeco.addEventListener("change", function() {
 }
 
 /*if (currentBetAmount > baseBetAmount) { 
